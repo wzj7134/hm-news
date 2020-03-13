@@ -1,13 +1,13 @@
 <template>
-  <div>我是根组件</div>
+  <div>
+    <router-link to="/login"></router-link>
+    <router-link to="/register"></router-link>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {}
 </script>
 
-<style>
-
-</style>
+<style></style>
