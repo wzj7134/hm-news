@@ -1,27 +1,27 @@
 import Vue from 'vue'
 import App from './App.vue'
-// 通用样式
-import './style/base.less'
-import './style/iconfont.css'
-// 导入lib-flexible
+
 import 'lib-flexible'
-// 导入路由
-import router from './router'
+// 引入通用样式
+import './style/base.css'
+// 引入字体图标
+import './style/iconfont.css'
 
-// 导入通用组件
-// 登录头部组件
-import HmHeader from './components/HmHeader'
-Vue.component('hm-header', HmHeader)
-
-// 登录Logo组件
+// 引入全局组件HMHeader
 import HmLogo from './components/HmLogo.vue'
+import HmBottom from './components/HmBottom.vue'
+import HmHeader from './components/HmHeader.vue'
+import HmInput from './components/HmInput.vue'
+import axios from 'axios'
+axios.defaults.baseURL = 'http://localhost:3000'
+Vue.prototype.axios = axios
+
+Vue.component('hm-header', HmHeader)
 Vue.component('hm-logo', HmLogo)
+Vue.component('hm-bottom', HmBottom)
+Vue.component('hm-input', HmInput)
 
-// 登录按钮组件封装
-import HmFooter from './components/HmFooter.vue'
-Vue.component('hm-footer', HmFooter)
-Vue.config.productionTip = false
-
+import router from './router'
 new Vue({
   router: router,
   render: h => h(App)
