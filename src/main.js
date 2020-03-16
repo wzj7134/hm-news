@@ -12,15 +12,19 @@ import HmLogo from './components/HmLogo.vue'
 import HmBottom from './components/HmBottom.vue'
 import HmHeader from './components/HmHeader.vue'
 import HmInput from './components/HmInput.vue'
-import axios from 'axios'
-axios.defaults.baseURL = 'http://localhost:3000'
-Vue.prototype.axios = axios
+import { Toast } from 'vant'
+Vue.use(Toast)
+
 
 Vue.component('hm-header', HmHeader)
 Vue.component('hm-logo', HmLogo)
 Vue.component('hm-bottom', HmBottom)
 Vue.component('hm-input', HmInput)
+import axios from 'axios'
+axios.defaults.baseURL = 'http://localhost:3000'
+Vue.prototype.axios = axios
 
+const bus = new Vue()
 import router from './router'
 new Vue({
   router: router,
