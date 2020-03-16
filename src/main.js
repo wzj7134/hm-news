@@ -12,10 +12,11 @@ import HmLogo from './components/HmLogo.vue'
 import HmBottom from './components/HmBottom.vue'
 import HmHeader from './components/HmHeader.vue'
 import HmInput from './components/HmInput.vue'
+import HmNavbar from './components/HmNavbar.vue'
 import { Toast } from 'vant'
 Vue.use(Toast)
 
-
+Vue.component('hm-navbar', HmNavbar)
 Vue.component('hm-header', HmHeader)
 Vue.component('hm-logo', HmLogo)
 Vue.component('hm-bottom', HmBottom)
